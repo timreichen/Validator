@@ -9,7 +9,7 @@ A lightweight value validator.
 - notEquals
 
 ```js
-import { boolean } from "deno.land/x/validator/mod.ts"
+import { boolean } from "https://deno.land/x/validator/mod.ts"
 
 const schema = boolean()
 const value = true
@@ -24,7 +24,7 @@ schema.validate(value) // returns { valid: true, value: true }
 - max
 
 ```js
-import { number } from "deno.land/x/validator/mod.ts"
+import { number } from "https://deno.land/x/validator/mod.ts"
 
 const schema = number().min(1).max(100)
 const value = 10
@@ -44,7 +44,7 @@ schema.validate(value) // returns { valid: true, value: 10 }
 - trim
 
 ```js
-import { string } from "deno.land/x/validator/mod.ts"
+import { string } from "https://deno.land/x/validator/mod.ts"
 
 const schema = string().equals("foo")
 const value = "foo"
@@ -59,7 +59,7 @@ schema.validate(value) // returns { valid: true, value: "foo" }
 - max
 
 ```js
-import { date } from "deno.land/x/validator/mod.ts"
+import { date } from "https://deno.land/x/validator/mod.ts"
 
 const schema = date().min(new Date(2010)).max(new Date(2020))
 const value = new Date(2015)
@@ -71,7 +71,7 @@ schema.validate(value) // returns { valid: true, value: "foo" }
 - strip
 
 ```js
-import { object, number, string } from "deno.land/x/validator/mod.ts"
+import { object, number, string } from "https://deno.land/x/validator/mod.ts"
 
 const schema = object({
   foo: boolean(),
@@ -92,7 +92,7 @@ schema.validate(value) // returns { valid: true, value: { foo: true, bar: "doe" 
 - max
 
 ```js
-import { object, number, string } from "deno.land/x/validator/mod.ts"
+import { object, number, string } from "https://deno.land/x/validator/mod.ts"
 
 const schema = array(string())
 
@@ -102,7 +102,7 @@ schema.validate(value) // returns { valid: true, value: ["foo", "bar"], errors, 
 ```
 or
 ```js
-import { object, number, string } from "deno.land/x/validator/mod.ts"
+import { object, number, string } from "https://deno.land/x/validator/mod.ts"
 
 const schema = array([string(), number()])
 
