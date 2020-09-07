@@ -69,6 +69,7 @@ schema.validate(value) // returns { valid: true, value: "foo", error: null }
 ### ObjectSchema
 #### Methods
 - strip
+
 ```js
 import { object, number, string } from "deno.land/x/validator/mod.ts"
 
@@ -89,6 +90,7 @@ schema.validate(value) // returns { valid: true, value: { foo: true, bar: "doe" 
 - length
 - min
 - max
+
 ```js
 import { object, number, string } from "deno.land/x/validator/mod.ts"
 
