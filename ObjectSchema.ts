@@ -27,7 +27,6 @@ export class ObjectSchema extends Schema {
   validate(values: { [key: string]: unknown }) {
     const state = {
       ...super.validate(values),
-      values: {},
       errors: {},
     } as ObjectState;
 
@@ -40,7 +39,7 @@ export class ObjectSchema extends Schema {
         state.errors[key] = ValueErrorCode.REQUIRED_PROPERTY_ERROR;
       } else {
         const nextState = schema.validate(values[key]);
-        state.values[key] = nextState.value;
+        state.value[key] = nextState.value;
         if (nextState.error) {
           state.errors[key] = nextState.error!;
         }

@@ -82,7 +82,7 @@ const value = {
   foo: true,
   bar: "doe"
 }
-schema.validate(value) // returns { valid: true, value: { foo: true, bar: "doe" }, values: { foo: true, bar: "doe" }, errors, {} }
+schema.validate(value) // returns { valid: true, value: { foo: true, bar: "doe" }, errors, {} }
 ```
 
 ### ArraySchema
@@ -98,7 +98,7 @@ const schema = array(string())
 
 const value = ["foo", "bar"]
 
-schema.validate(value) // returns { valid: true, value: ["foo", "bar"], values: { 0: "foo", 1: "bar" }, errors, {} }
+schema.validate(value) // returns { valid: true, value: ["foo", "bar"], errors, {} }
 ```
 or
 ```js
@@ -108,5 +108,5 @@ const schema = array([string(), number()])
 
 const value = ["foo", 22]
 
-schema.validate(value) // returns { valid: true, value: ["foo", 22], values: { 0: "foo", 1: 22 }, errors, {} }
+schema.validate(value) // returns { valid: true, value: ["foo", 22], errors, {} }
 ```

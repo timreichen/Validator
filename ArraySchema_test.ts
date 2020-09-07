@@ -6,7 +6,6 @@ Deno.test("array value", () => {
   const value: boolean[] = [];
   const schema = array(boolean());
   const result = schema.validate(value);
-  assertEquals(result.values, {});
   assertEquals(result.error, undefined);
   assertEquals(result.errors, {});
 });

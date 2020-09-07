@@ -19,7 +19,6 @@ export class ArraySchema extends Schema {
   validate(values: unknown[]): ObjectState {
     const state = {
       ...super.validate(values),
-      values: {},
       errors: {},
     } as ObjectState;
 
@@ -32,7 +31,7 @@ export class ArraySchema extends Schema {
           state.errors[index] = ValueErrorCode.REQUIRED_PROPERTY_ERROR;
         } else {
           const nextState = schema.validate(value);
-          state.values[index] = nextState.value;
+          state.value[index] = nextState.value;
           if (nextState.error) {
             state.errors[index] = nextState.error!;
           }
@@ -42,7 +41,7 @@ export class ArraySchema extends Schema {
       const schema = this.schema as Schema;
       for (const [index, value] of values.entries()) {
         const nextState = schema.validate(value);
-        state.values[index] = nextState.value;
+        state.value[index] = nextState.value;
         if (nextState.error) {
           state.errors[index] = nextState.error!;
         }

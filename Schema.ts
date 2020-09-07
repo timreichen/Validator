@@ -22,9 +22,6 @@ export interface State {
 }
 
 export interface ObjectState extends State {
-  values: {
-    [key: string]: any;
-  };
   errors: {
     [key: string]: ValueErrorCode;
   };
